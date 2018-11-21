@@ -1,7 +1,4 @@
 mesopotato: *says hi..
-<<<<<<< HEAD
-Yannick ist so ein Tüpflischeisser.
+Yannick ist so ein Tï¿½pflischeisser.
 Hallo
-=======
 intelij says Hi..
->>>>>>> branch 'master' of https://github.com/mesopotato/desescalator
