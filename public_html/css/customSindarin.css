@@ -1,0 +1,40 @@
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+ transform: scale(1.02);
+ transition: transform .2s; /* Animation */
+}
+.card {
+    color: beige;
+    margin: 2%;
+}
+
+.jumbotron {
+    
+
+}
+body{
+    background-image: url("https://wallpapercave.com/wp/6LxqLZV.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.navbar-dark {
+    color : lightgray;
+}
+.nav-bar {
+    color : lightgray; 
+}
+.navbar-brand {
+    color: lightgray;
+}
+a {
+    color: lightgray;
+}
+a:hover {
+    color:white;
+}
+.navbar-brand:hover {
+    color : black;
+}
