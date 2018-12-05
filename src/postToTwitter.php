@@ -17,4 +17,4 @@ $cd->setToken($ACCESS_TOKEN,$ACCESS_TOKEN_SECRET);
 
 $reply = $cd->statuses_update("status=Hello, World");
 
-echo $reply;
+//echo $reply;
