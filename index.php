@@ -7,7 +7,7 @@
  */
 <?php
 session_start();
-require 'secret.php'; //??
+require 'secret.php'; //?? autoload.php
 
 use Abraham\TwitterOAuth\TwitterOAuth; //?? kommt das einfach woher??
 
@@ -35,3 +35,5 @@ if (!isset($_SESSION['access_token'])) {
 }
 
 header("Location: public_html"); //wohin stellt sich heraus 
+
+?>

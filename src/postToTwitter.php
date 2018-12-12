@@ -15,6 +15,6 @@ $cd = \Codebird\Codebird::getInstance();
 
 $cd->setToken($ACCESS_TOKEN,$ACCESS_TOKEN_SECRET);
 
-$reply = $cd->statuses_update("status=Hello, World");
+$reply = $cd->statuses_update("status=TEST");
 
 //echo $reply;
