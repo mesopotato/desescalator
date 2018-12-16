@@ -35,6 +35,7 @@ class Configuration
 	}
 	
 	/**
+	 * Alias "consumer key"
 	 * @return string
 	 */
 	public function getAPI_KEY(): string
@@ -43,6 +44,7 @@ class Configuration
 	}
 	
 	/**
+	 * Alias "consumer secret"
 	 * @return string
 	 */
 	public function getAPI_SECRET_KEY():string

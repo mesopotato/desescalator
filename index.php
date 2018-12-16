@@ -5,15 +5,17 @@
  * Date: 12/5/2018
  * Time: 1:39 PM
  */
-<?php
+
 session_start();
-require 'secret.php'; //?? autoload.php
+require 'src/Configuration.php';
+$keys = new Configuration(); // aus dieser Klasse können alle key geholt werden.
 
 use Abraham\TwitterOAuth\TwitterOAuth; //?? kommt das einfach woher??
 
-define('CONSUMER_KEY', 'L4q6pYsH68gWK48EbX08Ky9av'); // add consumer key 
-define('CONSUMER_SECRET', '4rjJX7RQDPY3kxgv5UkHQVI6j2K0JANBGFWBWQ1kIkpIbVbUID'); // add consumer secret 
+define('CONSUMER_KEY', $keys->getAPI_KEY()); // add consumer key
+define('CONSUMER_SECRET', $keys->getAPI_SECRET_KEY()); // add consumer secret
 define('OAUTH_CALLBACK', 'http://localhost/desescalator2/callback.php'); //  app callback URL 
+
 
 
 if (!isset($_SESSION['access_token'])) {

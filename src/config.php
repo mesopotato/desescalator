@@ -1,6 +1,6 @@
 <?php
 
-require("../secret.php");
+require("../../desescalator_config/secret.php");
 
 $API_KEY = $secret["apikey"];
 $API_SECRET_KEY = $secret["apisecretkey"];
