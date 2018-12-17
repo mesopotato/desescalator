@@ -15,3 +15,5 @@ $config = array(
 $configtest = array(
 	"test" => "value"
 );
+
+trigger_error("config.php is deprecated. Use Configuration.php instead.",E_USER_NOTICE);
