@@ -36,6 +36,7 @@ class Configuration
 	
 	/**
 	 * Alias "consumer key"
+	 * Authenticates our Application
 	 * @return string
 	 */
 	public function getAPI_KEY(): string
@@ -45,6 +46,7 @@ class Configuration
 	
 	/**
 	 * Alias "consumer secret"
+	 * Authenticates our Application
 	 * @return string
 	 */
 	public function getAPI_SECRET_KEY():string
@@ -53,6 +55,7 @@ class Configuration
 	}
 	
 	/**
+	 * Used to make request on behalf of our Twitter account
 	 * @return string
 	 */
 	public function getACCESS_TOKEN(): string
@@ -61,6 +64,7 @@ class Configuration
 	}
 	
 	/**
+	 * Used to make Requests on behalf of our Twitter account
 	 * @return string
 	 */
 	public function getACCESS_TOKEN_SECRET(): string
