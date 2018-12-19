@@ -2,6 +2,8 @@
 ---
 A PHP implementation by using Twitter API
 ---
+[![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
+
 [Documents](https://drive.google.com/open?id=1Jv7LSfT_MDGi3HYUMKRcH5u5S9tPgUTS)
 
 [Rollen](https://docs.google.com/document/d/17g6ulZsMIqNvBnC-qucA-jeRMrgcY7waidRa3mth2Q4/edit?usp=sharing)
