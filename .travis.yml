@@ -1,11 +1,11 @@
 language: php
 php:
-  - 7.0
+  #- 7.0
   - 7.1
   - 7.2
-  - 5.4
-  - 5.5
-  - 5.6
+  #- 5.4
+  #- 5.5
+  #- 5.6
   - hhvm
 
 stages:
@@ -17,11 +17,10 @@ install:
 
 
 script:
-  - phpunit
+  - phpunit test/
   - ls -l
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file: desescalator.zip
-  
