@@ -5,3 +5,5 @@ php:
 branches:
   only:
     -master
+script:
+  - ls -l
