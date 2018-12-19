@@ -8,6 +8,20 @@ php:
   - 5.6
   - hhvm
 
+stages:
+  - name: deploy
+    if: commit_message =~ /(\[makebuild\])/
+
+install:
+  - composer install --prefer-source --no-interaction --dev
+
+
 script:
+  - phpunit
   - ls -l
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: desescalator.zip
+  
