@@ -4,4 +4,4 @@ php:
 
 branches:
   only:
-    -master
+    -masterhello
