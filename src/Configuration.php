@@ -16,6 +16,7 @@ $localACCESS_TOKEN_SECRET = $secret["accesstokensecret"];
 
 class Configuration
 {
+	
 	/** @var string api-key */
 	private $tAPI_KEY;
 	/** @var string api-secret-key */
