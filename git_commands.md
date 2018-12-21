@@ -8,7 +8,7 @@ Git ist ein Version Controll System, mit dem Änderung in einer History nachverf
 
 Für jedes Projekt mit Git, gibt es ein eigenes **Repository**.  
 In diesem Repository gibt es weiter sogenannte **Branches**, welche als momentane Version des Projekts angesehen werden können.  
-Aufgrund der Art wie Git funktioniert, kann ein Branch auf GitHub und die lokale Version desselben, als Unterschiedlich angesehen werden. Deswegen kann es auch bei einem Push zu einem Merge-Konflickt kommen. Um das zu Verhindern, sollte der lokale Branch immer auf dem neusten Stand sein und Änderungen sollten, sobald sie stabil sind, auf GitHub gepusht werden.
+Aufgrund der Art wie Git funktioniert, kann ein Branch auf GitHub und die lokale Version desselben, als Unterschiedlich angesehen werden. Deswegen kann es auch bei einem Push zu einem Merge-Konflickt kommen. Um das zu Verhindern, sollte der lokale Branch immer auf dem neusten Stand sein und Änderungen sollten, sobald sie stabil sind, auf GitHub gepusht werden.  
 
 
 ## Neues Repository
