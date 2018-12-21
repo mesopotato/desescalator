@@ -1,20 +1,27 @@
 language: php
 php:
-- 7.1
-- 7.2
-- hhvm
+  - 7.1
+  - 7.2
+  - hhvm
+
 stages:
-- name: deploy
-  if: commit_message =~ /(\[makebuild\])/
+  - name: deploy
+      if: commit_message =~ /(\[makebuild\])/
+
+
 install:
-- composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction --dev
+
 script:
-- phpunit test/
-- ls -l
-- pwd
+  - phpunit test/
+  - ls -l
+  - pwd
+
 deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: desescalator.zip
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_8d56375ef506_key -iv $encrypted_8d56375ef506_iv -in secret.php.enc -out ../desescalator_config/secret.php -d
+  - mkdir ../desescalator_config
+  - openssl aes-256-cbc -K $encrypted_8d56375ef506_key -iv $encrypted_8d56375ef506_iv -in secret.php.enc -out ../desescalator_config/secret.php -d
