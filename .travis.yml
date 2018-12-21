@@ -1,27 +1,25 @@
 language: php
 php:
-  - 7.1
-  - 7.2
-  - hhvm
-
+- 7.1
+- 7.2
+- hhvm
 stages:
-  - name: deploy
-    if: commit_message =~ /(\[makebuild\])/
-
-
+- name: deploy
+  if: commit_message =~ /(\[makebuild\])/
 install:
-  - composer install --prefer-source --no-interaction --dev
-
+- composer install --prefer-source --no-interaction --dev
 script:
-  - phpunit test/
-  - ls -l
-  - pwd
-
+- phpunit test/
+- ls -l
+- pwd
 deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
   file: desescalator.zip
-
 before_install:
-  - mkdir ../desescalator_config
-  - openssl aes-256-cbc -K $encrypted_8d56375ef506_key -iv $encrypted_8d56375ef506_iv -in secret.php.enc -out ../desescalator_config/secret.php -d
+- echo $secret_pass | gpg --passphrase-fd 0 secret.php.gpg
+- mkdir ../desescalator_secret
+- mv secret.php ../desescalator_secret/
+env:
+  global:
+    secure: R3IZzW+uVnm0Vewn7VYmVzA1IFLUvkX+gx8J7caRpfzrS5m3MgpvOUMH4VNa1+dHp7rpM60bgxLKpaveS8QvhnbTXjtde0nZ/0UtN3H8BIbJsqao35P58/dUb+iHbd7kwg3QUp4WifHUif+OYzGXUDFccFp+TeiMiFFTw1TrQpi93cyD7ci2FoxSlp56wthUCLKCyJLBbz4usYTdg9vaWSMUTiV1mnFLNRaEsrEd44jHhyYohpE7EgRuounDO4ZCIHWnPjhAHhSa8boXj8AmIZyaJLMJIsnfxheh465Qx0GGVKQO6I0Phf1vyzCJPmfhEM9ppz1sO3F3+0QyeSdnlr1EzwUUPdh2HzaMmdLqKQ1YO6SyNln8dX3CRLdRVnaE46RoiD/y9ESbIV+k6J7R6eK5yagFEJT197Xlt7W97mjbAl1Oz75lUTU4IWiel1ota4VaavnfmwFq5dC+MzRiL9dwCRKshG2HD28Z4QPoq23I1QXsUBh4BGdHGPLjmE/mQme7lGE+OcM1b0JTfjb8g3/K+vIFGb8smu0S6gRAlPhacVGSjhSIZnI2knHezZ+V7+zOtt8lsj596kK7L40aZ+iw48eDoOzRcm2KlKa2XRl2h3Xcz8/QlT2i7bL0Tc9Be5G5JuUe3LsSZvccqgdHap8SNA0dyUo/QlV0P1Qzn1c=
