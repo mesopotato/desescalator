@@ -19,6 +19,7 @@ install:
 script:
   - phpunit test/
   - ls -l
+  - pwd
 
 deploy:
   provider: releases
