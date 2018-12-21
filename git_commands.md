@@ -24,7 +24,7 @@ Die einfachste Variante ist das Clonen eines Vorhendenen Repositorys. Hierzu wir
 ```
 $ git clone https://github.com/mesopotato/desescalator.git
 ```
-
+ 
 ## Arbeiten mit Git
 
 Als erstes muss klar gestellt werden, das Git ohne explizite Commands gar nichts macht.  
