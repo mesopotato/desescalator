@@ -4,8 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26e9f24c15c1daef1e431c6e46d537d8",
+    "content-hash": "9a27f5652b2f4f99774320b8ddc157c9",
     "packages": [
+        {
+            "name": "desescalator/secret",
+            "version": "1.1",
+            "dist": {
+                "type": "path",
+                "url": "../desescalator_secret",
+                "reference": "b3a3858a168d9eda95149f71c1dc2e4a46679823",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Desescalator\\Secret\\": "src/"
+                }
+            },
+            "description": "stuff"
+        },
         {
             "name": "zendframework/zend-debug",
             "version": "2.6.0",
