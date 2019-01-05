@@ -1,6 +1,6 @@
 # Desescalator #
 ---
-A PHP implementation by using Twitter API
+A PHP and JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
 ---
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 
