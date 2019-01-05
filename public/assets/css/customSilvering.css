@@ -1,0 +1,35 @@
+
+.nav-link{
+    
+}
+small{
+     color: gray;
+}
+.well{
+    background-color: coral;
+    padding: 1%;
+}
+nav-item{
+    float: right;
+}
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+ transform: scale(1.02);
+ transition: transform .2s; /* Animation */
+}
+.card {
+    color: beige;
+    margin: 2%;
+}
+
+.jumbotron {
+    background-color: white;
+        background: url(../w3images/jibitH.PNG);
+    background-repeat: no-repeat;
+    background-size: 600px 200px;
+
+}
+img {
+    width: 50%;
+    height: 30%;
+}
