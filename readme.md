@@ -12,7 +12,12 @@ currently it is listening on port 3000
 
 so put [localhost:3000](http://localhost:3000) in the url-bar of your browser
 
-**the bot is not a toy, it replyes to real people so queries have to be made with care**
+**the app is not a toy, it replyes to real people so queries have to be made with care**
+
+also is the app currenty **crashing** when trying to stop() a Twit.stream (after a user hits the "End" button)
+and when feeding more queries while running the app the Twit.stream just adds keywords into the requests instead of replacing/updating the stream
+
+furthermore too many replyes had ben made by the app during testing-phase so htat **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site 
 
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 
