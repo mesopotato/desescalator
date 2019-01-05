@@ -18,7 +18,7 @@ so put [localhost:3000](http://localhost:3000) in the url-bar of your browser
 ~~also is the app currenty **crashing**~~ not anymore but strange behavour is observed when trying to stop() a Twit.stream (after a user hits the "End" button)
 and when feeding more queries while running the app the Twit.stream just adds keywords into the requests instead of replacing/updating the stream 
 
-according to the [twitter developer documentation[(https://developer.twitter.com/en/docs/tutorials/consuming-streaming-data.html#) a strem connection has to be closed 
+according to the [twitter developer documentation](https://developer.twitter.com/en/docs/tutorials/consuming-streaming-data.html#) a strem connection has to be closed 
 
 according to the [twit node package developers](https://github.com/ttezel/twit#tstreampath-params) the stream can be closed with .stop() and the API does not throw an error. however the stream remains open and firering. 
 
