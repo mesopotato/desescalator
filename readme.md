@@ -10,7 +10,7 @@ then run "node index.js" --> on the console should appear something
 
 currently it is listening on port 3000
 
-so put [localhost:3000](localhost:3000) in the url-bar of your browser
+so put [localhost:3000](http://localhost:3000) in the url-bar of your browser
 
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 
