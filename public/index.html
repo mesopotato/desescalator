@@ -9,8 +9,11 @@
     .greentext {
                 color: #00ffcc;
         }
+        .bluebackground{
+          background-color: #4dd2ff;
+        }
       </style>
-  <title>Page Title</title>
+  <title>desescalator</title>
   <script src="/assets/js/node_modules/jquery/dist/jquery.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -49,11 +52,11 @@
   </nav>
 
   <!--jumbo-->
-  <div class="jumbotron bg-primary text-center text-white mb-0 radius-0">
+  <div class="jumbotron bg-primary text-center text-white radius-0 bluebackground" style="background-color: #4dd2ff;">
     <div class="container">
-      <p class="text-white text-handwriting text-uppercase">Tweet your love</p>
+      <p class="text-white text-handwriting text-uppercase">realtime tweets</p>
       <h1 class="display-3 text-success text-uppercase title-margin-fix">Desescalator</h1>
-      <p>Your Query: {{name}}</p>
+      
       <div>
         <button class="btn btn-outline-light btn-lg m-2 btn-hover-text-primary" data-toggle="modal" data-target=".bd-example-modal-xl">
           Start
@@ -71,7 +74,7 @@
     <div class="modal-dialog modal-xl" id="mapa-modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Input Parameters</h5>
+          <h5 class="modal-title" id="exampleModalLabel">input parameters</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -79,39 +82,41 @@
         <form action="">
           <div class="modal-body">
             <div class="form-group">
-              <label for="formGroupExampleInput">Search for any given String</label><br>
+              <label for="formGroupExampleInput">search for any string in a realtime tweet</label><br>
               <input type="text" class="form-control" id="string" name="string" placeholder="for example #LivePD.."
                 required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Should an answer be replyed?</label><br>
+              <label for="formGroupExampleInput">should an answer be replyed?</label><br>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" value="off2" checked required> NO
+                  <input type="radio" name="options" id="option1" autocomplete="off" value="off2" checked required> no
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off" value="on2"> YES
+                  <input type="radio" name="options" id="option2" autocomplete="off" value="on2"> yes
                 </label>
               </div><br>
-
+              <div ng-app="">
               <input type="text" class="form-control" id="answer" ng-model="name" name="answer" placeholder="write reply here..">
+              <p>Your Reply is : <div  class="redtext">@username {{name}}</div></h1>
+              </div>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Do you want the post to be retweeted?</label><br><br>
+              <label for="formGroupExampleInput">do you want the post to be retweeted?</label><br><br>
               <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radioB">
                 <label class="btn btn-secondary active">
-                  <input type="radio" autocomplete="off" name="checkbox" value="off" id="retweet" checked> NO
+                  <input type="radio" autocomplete="off" name="checkbox" value="off" id="retweet" checked> no
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="checkbox" id="option2" autocomplete="off" value="on"> YES
+                  <input type="radio" name="checkbox" id="option2" autocomplete="off" value="on"> yes
                 </label>
               </div><br>
             </div>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" id="m" class="btn btn-primary">Start Bot</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+            <button type="submit" id="m" class="btn btn-primary">start app</button>
           </div>
         </form>
       </div>
@@ -162,8 +167,15 @@
         return false;
       });
       $("#close").click(function () {
-        close = 'close';
-        socket.emit('close', close);
+        var close = 'close';
+
+        var json = {
+          string: close,
+          answer: '',
+          checkbox: '',
+          checkbox2: ''
+        }
+        socket.emit('close', json);
         close.val('');
         return false;
       });

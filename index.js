@@ -9,10 +9,10 @@ var io = require('socket.io')(http);
 var Twit = require('twit');
 // Making a Twit object for connection to the API 
 var T = new Twit({
-    consumer_key: 'L4q6pYsH68gWK48EbX08Ky9av'
-    , consumer_secret: '4rjJX7RQDPY3kxgv5UkHQVI6j2K0JANBGFWBWQ1kIkpIbVbUID'
-    , access_token: '928752851265970177-8FtwvdyqN0cZtNXHfQGYx1FDrZFqMP7'
-    , access_token_secret: 'ife34t6LiEo8uzZx9Gb5FLTIaxdP8kvSlYOliL7J3TD6l'
+    consumer_key: 'YnJrJf7hiAJm9EUGyWO9A0G39'
+    , consumer_secret: 'iqyV9FBBRWgRdS8gFWw5AZmeCNByCAfAYU42u2dHwoWKXlxyzI'
+    , access_token: '928752851265970177-6oQihs8qrxGS73YHZUjDDCesx6r9kGh'
+    , access_token_secret: '76LMfedl2SlSJZnBvXnbnsrs174Et3q0FzhhIoGBboA4W'
 })
 
 //app.use(express.static(__dirname + '/public'));
@@ -38,7 +38,7 @@ io.on('connect', function (socket) {
     });
 
     socket.on('close', function (msg) {
-        //console.log('bot is sleeping : ' + msg);
+        console.log('close function reached : ' + msg);
         //out = setTimeout(chat(msg), 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999);
         scan = false;
         //kill.chat();
@@ -52,50 +52,58 @@ io.on('connect', function (socket) {
         console.log('chat message reached');
         chat(msg, scan);
     });
-    socket.on('wtf', function(msg){
+    socket.on('wtf', function (msg) {
         console.log('WTF message reached');
     });
 
 });
 function chat(msg, scan) {
-    console.log('message: ' + msg);
-    console.log()
+    console.log('Message kommt rein: ' + msg.string);
+    console.log('Actual value of the scan BOOLEAN: ' + scan);
     //-----------------------------------------
     //var param = JSON.parse(msg);
     var phrase = msg.string;
     var regex = new RegExp(msg.string);
     var answer = msg.answer;
 
+    // var scan = this.scan;
     //es werden suchparameter hinzugefügt und nach mehreren gesucht und herausgeschickt.. wenn nicht irendwas getan wird..
     //  if (phrase != compare){
     //     stream.stop();
+
     var stream = T.stream('statuses/filter', { track: phrase });
     //      phrase = msg.string;
     //}else {
     //      var stream = T.stream('statuses/filter', { track: phrase });
     //}
-
-
+    //if (scan) {
+    console.log('scanTwitter function reached');
+    //var phrase = msg;
     if (scan) {
 
-        console.log('scanTwitter function reached');
-        //var phrase = msg;
+        //stream.stop();
+
+        console.log('!!!!API SCHICKT TWEET!!!!')
         stream.on('tweet', gotTweet);
         function gotTweet(tweet) {
             var name = tweet.user.screen_name;
 
-            if (regex.test(tweet.text)) {
+            if (regex.test(tweet.text) && scan == true) {
                 //   if (tweet.user.location != null){    
                 var retweetedS = 'Not retweeted';
-                console.log('Checkbox value : ' + msg.checkbox);
-                //stream.stop();
+                if (msg.string == 'close') {
+                    console.log('stream wurde gestoppt')
+                    stream.stop();
+                }
+                console.log('Scan must be TRUE :' + scan);
+                console.log(tweet.text);
 
-                console.log('Msg.Answer field Check2: ' + msg.checkbox2);
-                console.log('Msg.Answer field Ceck1: ' + msg.checkbox);
-                console.log('------------------------------------------------------------');
+                console.log('Msg. reply field Check2: ' + msg.checkbox2);
+                console.log('Msg. retweet field Ceck1: ' + msg.checkbox);
+
                 //json = JSON.stringify(tweet.text) + '\n';
                 var id = tweet.id_str;
-                
+
 
                 if (msg.checkbox2 == 'on2') {
                     var replyText = '@' + name + ' ' + answer;
@@ -109,13 +117,15 @@ function chat(msg, scan) {
                             console.log('Replyed: ' + replyText);
                         }
                     }
+                } else {
+                    console.log('Not replyed')
                 }
 
                 // Post that tweet
                 if (msg.checkbox == 'on') {
                     //setTimeout(reply(), 10000);
                     // function reply(){
-                    T.post('statuses/update', { status: replyText, in_reply_to_status_id: id, auto_populate_reply_metadata: true, possibly_sensitive: true}, tweeted);
+                    T.post('statuses/update', { status: replyText, in_reply_to_status_id: id, auto_populate_reply_metadata: true, possibly_sensitive: true }, tweeted);
                     console.log('checkbox is YES : ' + msg.checkbox);
                     retweetedS = 'retweeted';
 
@@ -124,30 +134,44 @@ function chat(msg, scan) {
                         if (err) {
                             console.log(err.message);
                         } else {
-                            console.log('------------------------HURRA---------------------------------');
+
                             console.log('Retweeted: ' + scan);
+                            console.log('------------------------HURRA---------------------------------');
                         }
                     }
                     //  }
                 }
                 else {
-                    console.log('checkbox is NO' + msg.checkbox);
+                    console.log('Not retweeted :' + msg.checkbox);
+
                 }
                 var retweet = "retweet";
                 tweet[retweet] = retweetedS;
                 var reply = "reply";
                 tweet[reply] = replyText;
-                io.emit('chat message', tweet);
-            }
 
+                io.emit('chat message', tweet);
+                console.log('emitted to client');
+                console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+            } else {
+                console.log('Rgex OR--------SCAN WAS: ' + scan);
+            }
         }
     } else {
-        //wtf causes BAd twitter API request and fails
+        console.log('hure');
+        console.log('Scan is false and stream is stopped:' + scan + ' -----------------------------')
         stream.stop();
-        console.log('scan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was false');
     }
-    //-----------------------------------------
+
+
 }
+
+//} else {
+//wtf causes BAd twitter API request and fails
+// stream.stop();
+//console.log('scan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was false');
+//}
+//-----------------------------------------
 function isEmpty(obj) {
     for (var key in obj) {
         if (obj.hasOwnProperty(key))
