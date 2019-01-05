@@ -181,7 +181,7 @@
       });
       socket.on('chat message', function (msg) {
         // $('#list').append($('<a href="#!" class="list-group-item list-group-item-action flex-column align-items-start"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1 redtext">' + msg.user.screen_name + '</h5><small class="text-muted">' + msg.created_at + '</small></div><p class="mb-1">' + msg.text + '</p><small class="text-muted greentext">You replyed: ' + msg.reply + '</small>'));
-        $('#cards').append($('<div class="card shadow p-3 mb-5 bg-white rounded"><img class="img-fluid img-thumbnail" src="' + msg.user.profile_image_url + '"><div class="card-body"><h4 class="card-title redtext">' + msg.user.screen_name + '</h4><br><h6 class="card-subtitle mb-2 text-muted"> Followers : ' + msg.user.followers_count + '</h6><p class="card-text">' + msg.text + '</p> <br> <p class="greentext">You Replyed : ' + msg.reply + '</p><br><p class="redtext">Status : ' + msg.retweet + '</div></div>'));
+        $('#cards').append($('<div class="card shadow p-3 mb-5 bg-white rounded"><img class=" img-thumbnail" src="' + msg.user.profile_image_url + '"><div class="card-body"><h4 class="card-title redtext">' + msg.user.screen_name + '</h4><br><h6 class="card-subtitle mb-2 text-muted"> Followers : ' + msg.user.followers_count + '</h6><p class="card-text">' + msg.text + '</p> <br> <p class="greentext">You Replyed : ' + msg.reply + '</p><br><p class="redtext">Status : ' + msg.retweet + '</div></div>'));
       });
       //does nothing 
       document.querySelector('#cards').scrollIntoView({
