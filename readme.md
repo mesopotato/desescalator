@@ -1,4 +1,5 @@
 # Desescalator #
+[![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 ---
 A PHP and JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
 ---
@@ -19,7 +20,6 @@ and when feeding more queries while running the app the Twit.stream just adds ke
 
 furthermore too many replyes had ben made by the app during testing-phase so htat **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site 
 
-[![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 
 [Documents](https://drive.google.com/open?id=1Jv7LSfT_MDGi3HYUMKRcH5u5S9tPgUTS)
 
