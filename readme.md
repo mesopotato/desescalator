@@ -18,9 +18,9 @@ so put [localhost:3000](http://localhost:3000) in the url-bar of your browser
 also is the app currenty **crashing** when trying to stop() a Twit.stream (after a user hits the "End" button)
 and when feeding more queries while running the app the Twit.stream just adds keywords into the requests instead of replacing/updating the stream
 
-furthermore too many replyes had ben made by the app during testing-phase so htat **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site 
----
+furthermore too many replyes had ben made by the app during testing-phase so that **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site 
 
+---
 [Documents](https://drive.google.com/open?id=1Jv7LSfT_MDGi3HYUMKRcH5u5S9tPgUTS)
 
 [Rollen](https://docs.google.com/document/d/17g6ulZsMIqNvBnC-qucA-jeRMrgcY7waidRa3mth2Q4/edit?usp=sharing)
