@@ -12,6 +12,8 @@ currently it is listening on port 3000
 
 so put [localhost:3000](http://localhost:3000) in the url-bar of your browser
 
+*the bot is not a toy, it replyes to real people so queries have to be made with care*
+
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
 
 [Documents](https://drive.google.com/open?id=1Jv7LSfT_MDGi3HYUMKRcH5u5S9tPgUTS)
