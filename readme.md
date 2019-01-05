@@ -26,7 +26,7 @@ on [github](https://github.com/desmondmorris/node-twitter/issues/129) they close
 
 also nothing can be found on the [API reference page](https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/connecting) 
 
-on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streaming/6035) page is a sad chat where everybody has the same problem ans i dont understand the closing-thread-argument
+on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streaming/6035) page is a sad chat where everybody has the same problem and the closing-thread-argument is difficult to understand
 
 ~~furthermore too many replyes had ben made by the app during testing-phase so that **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site~~ i mad a new app "desescalator2"
 
