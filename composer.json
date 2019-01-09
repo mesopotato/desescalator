@@ -4,14 +4,17 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../desescalator_secret/"
+            "url": "../desescalator_secret/",
+            "options": {
+                "symlink": false
+            }
         }
     ],
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
+    //"autoload": {
+    //    "classmap": [
+    //        "src/"
+    //    ]
+    //},
     "require-dev": {
         "phpunit/phpunit": "7.5.1"
     },
