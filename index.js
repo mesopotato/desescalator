@@ -1,4 +1,3 @@
-
 const express = require('express');
 var app = require('express')();
 var app = express();
@@ -119,8 +118,8 @@ function chat(msg, scan) {
                             console.log("Error: " + err.message);
                         } else {
                             console.log('Retweeted: '
-                             + replyText);
-                            
+                                + replyText);
+
                         }
                     }
                 } else {
@@ -133,14 +132,14 @@ function chat(msg, scan) {
                     // function reply(){
                     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id, auto_populate_reply_metadata: true, possibly_sensitive: true }, tweeted);
                     console.log('checkbox is YES : ' + msg.checkbox2);
-                    
+
 
                     // Make sure it worked!
                     function tweeted(err, reply) {
                         if (err) {
                             console.log(err.message);
                         } else {
-                            
+
                             console.log('Replyed: ' + replyText);
                             console.log('------------------------HURRA---------------------------------');
                         }
@@ -154,9 +153,9 @@ function chat(msg, scan) {
                 var retweet = "retweet";
                 tweet[retweet] = retweetedS;
                 var reply = "reply";
-                if (msg.checkbox2 == 'on2'){
+                if (msg.checkbox2 == 'on2') {
                     tweet[reply] = replyText;
-                }else{
+                } else {
                     tweet[reply] = 'Nothing';
                 }
 
