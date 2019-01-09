@@ -6,7 +6,7 @@
  * Time: 1:55 PM
  */
 
-require_once '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 //require_once "../src/Configuration.php";
