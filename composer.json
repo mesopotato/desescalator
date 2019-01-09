@@ -17,6 +17,6 @@
     },
     "require": {
         "zendframework/zend-debug": "^2.6",
-        "desescalator/secret": "*"
+        "desescalator/secret": "1.1"
     }
 }
