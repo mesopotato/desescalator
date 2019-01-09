@@ -1,32 +1,38 @@
-language: php
-php:
-- 7.1
-- 7.2
-- hhvm
-stages:
-- name: deploy
-  if: commit_message =~ /(\[makebuild\])/
-install:
-- composer install --prefer-source --no-interaction --dev
-script:
-- phpunit test/
-- ls -l
-- pwd
-deploy:
-  provider: releases
-  api_key: "$GITHUB_TOKEN"
-  file: desescalator.zip
-before_install:
-- echo $secret_pass | gpg --passphrase-fd 0 secret.php.gpg
-- mv desescalator_secret ../
-- mv secret.php ../desescalator_secret/src/
-- cd ../desescalator_secret/src/
-- pwd
-- ls
-- cd ../
-- composer install
-- cd ../desescalator/
-- pwd
+matrix:
+  include:
+    - language: php
+      php:
+      - 7.1
+      - 7.2
+      - hhvm
+      stages:
+      - name: deploy
+        if: commit_message =~ /(\[makebuild\])/
+      install:
+      - composer install --prefer-source --no-interaction --dev
+      script:
+      - phpunit test/
+      - ls -l
+      - pwd
+      deploy:
+        provider: releases
+        api_key: "$GITHUB_TOKEN"
+        file: desescalator.zip
+      before_install:
+      - echo $secret_pass | gpg --passphrase-fd 0 secret.php.gpg
+      - mv desescalator_secret ../
+      - mv secret.php ../desescalator_secret/src/
+      - cd ../desescalator_secret/src/
+      - pwd
+      - ls
+      - cd ../
+      - composer install
+      - cd ../desescalator/
+      - pwd
+    - language: node_js
+      node_js:
+      - "iojs"
+      - "7"
 
 env:
   global:
