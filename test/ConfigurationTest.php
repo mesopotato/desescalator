@@ -19,13 +19,13 @@ class ConfigurationTest extends TestCase
 	public function testGetAPI_KEY()
 	{
 		$configuration = new Configuration();
-		$this->assertNotEmpty($configuration->getAPI_KEY());
+		$this->assertNotEmpty($configuration->getAPI_KEY(),"testGetAPI_KEY");
 	}
 	
 	public function testGetACCESS_TOKEN()
 	{
 		$configuration = new Configuration();
-		$this->assertNotEmpty($configuration->getACCESS_TOKEN());
+		$this->assertNotEmpty($configuration->getACCESS_TOKEN(),"testGetACCESS_TOKEN");
 	}
 	
 	public function testGetAPI_SECRET_KEY()
