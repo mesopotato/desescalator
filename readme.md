@@ -1,5 +1,7 @@
 # Desescalator #
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
+
+[![Coverage Status](https://coveralls.io/repos/github/mesopotato/desescalator/badge.svg?branch=master)](https://coveralls.io/github/mesopotato/desescalator?branch=master)
 ---
 A PHP?? and JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
 ---
