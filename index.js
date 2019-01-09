@@ -38,7 +38,7 @@ io.on('connect', function (socket) {
 
     socket.on('close', function (msg) {
         console.log('close function reached : ' + msg);
-        //out = setTimeout(chat(msg), 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999);
+        
         scan = false;
         //kill.chat();
         // das eröffnet irgendwie ein weiterer thread..
@@ -228,10 +228,8 @@ app.get('/ajaxcall', function (req, res) {
                 }
             }
         }
-
         // response.write('</table>');
     }
-
 
     var data = {
         contactId: 1,
