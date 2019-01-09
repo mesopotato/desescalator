@@ -15,7 +15,7 @@ $localACCESS_TOKEN = $secret["accesstoken"];
 $localACCESS_TOKEN_SECRET = $secret["accesstokensecret"];
 */
 namespace Mesopotato\Desescalator;
-require_once '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 use Desescalator\Secret\Secret;
 class Configuration
 {
