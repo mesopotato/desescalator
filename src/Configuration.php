@@ -6,14 +6,17 @@
  * Time: 11:48 AM
  */
 
+/*
 require("../../desescalator_config/secret.php");
 
 $localAPI_KEY = $secret["apikey"];
 $localAPI_SECRET_KEY = $secret["apisecretkey"];
 $localACCESS_TOKEN = $secret["accesstoken"];
 $localACCESS_TOKEN_SECRET = $secret["accesstokensecret"];
-
-
+*/
+namespace Mesopotato\Desescalator;
+require_once '../vendor/autoload.php';
+use Desescalator\Secret\Secret;
 class Configuration
 {
 	/** @var string api-key */
@@ -27,11 +30,11 @@ class Configuration
 	
 	public function __construct()
 	{
-		global $localAPI_KEY, $localAPI_SECRET_KEY, $localACCESS_TOKEN, $localACCESS_TOKEN_SECRET;
-		$this->tAPI_KEY = $localAPI_KEY;
-		$this->tAPI_SECRET_KEY = $localAPI_SECRET_KEY;
-		$this->tACCESS_TOKEN = $localACCESS_TOKEN;
-		$this->tACCESS_TOKEN_SECRET = $localACCESS_TOKEN_SECRET;
+		$secret = new Secret();
+		$this->tAPI_KEY = $secret::apikey;
+		$this->tAPI_SECRET_KEY = $secret::apisecretkey;
+		$this->tACCESS_TOKEN = $secret::accesstoken;
+		$this->tACCESS_TOKEN_SECRET = $secret::accesstokensecret;
 	}
 	
 	/**
