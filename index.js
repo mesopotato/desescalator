@@ -104,7 +104,6 @@ function chat(msg, scan) {
                 //json = JSON.stringify(tweet.text) + '\n';
                 var id = tweet.id_str;
 
-                if (msg.checkbox2 == 'on2') {
                 if (msg.checkbox == 'on' || msg.checkbox2 == 'on2') {
                     var replyText = '@' + name + ' ' + answer;
                 } else {
