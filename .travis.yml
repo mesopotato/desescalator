@@ -22,6 +22,7 @@ before_install:
 - mv secret.php ../desescalator_secret/src/
 - cd ../desescalator_secret/
 - pwd
+- ls
 - composer install
 - cd ../desescalator/
 - pwd
