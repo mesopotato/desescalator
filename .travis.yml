@@ -33,6 +33,9 @@ matrix:
       node_js:
       - "iojs"
       - "7"
+      stages:
+      - name: deploy
+        if: commit_message =~ /(\[makebuild\])/
 
 env:
   global:
