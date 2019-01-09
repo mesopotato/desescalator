@@ -21,8 +21,10 @@ before_install:
 - mv desescalator_secret ../
 - mv secret.php ../desescalator_secret/src/
 - cd ../desescalator_secret/
+- pwd
 - composer install
 - cd ../desescalator/
+- pwd
 
 env:
   global:
