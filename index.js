@@ -83,7 +83,7 @@ function chat(msg, scan) {
 
         //stream.stop();
 
-        console.log('!!!!API SCHICKT TWEET!!!!')
+        console.log('!!!!API SCHICKT TWEET!!!!');
         stream.on('tweet', gotTweet);
         function gotTweet(tweet) {
             var name = tweet.user.screen_name;
@@ -92,7 +92,7 @@ function chat(msg, scan) {
                 //   if (tweet.user.location != null){    
                 var retweetedS = 'Not retweeted';
                 if (msg.string == 'close') {
-                    console.log('stream wurde gestoppt')
+                    console.log('stream wurde gestoppt');
                     stream.stop();
                 }
                 console.log('Scan must be TRUE :' + scan);
@@ -118,7 +118,7 @@ function chat(msg, scan) {
                         }
                     }
                 } else {
-                    console.log('Not replyed')
+                    console.log('Not replyed');
                 }
 
                 // Post that tweet
