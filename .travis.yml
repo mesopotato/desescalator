@@ -20,9 +20,10 @@ before_install:
 - echo $secret_pass | gpg --passphrase-fd 0 secret.php.gpg
 - mv desescalator_secret ../
 - mv secret.php ../desescalator_secret/src/
-- cd ../desescalator_secret/
+- cd ../desescalator_secret/src/
 - pwd
 - ls
+- cd ../
 - composer install
 - cd ../desescalator/
 - pwd
