@@ -104,51 +104,62 @@ function chat(msg, scan) {
                 //json = JSON.stringify(tweet.text) + '\n';
                 var id = tweet.id_str;
 
-
                 if (msg.checkbox2 == 'on2') {
+                if (msg.checkbox == 'on' || msg.checkbox2 == 'on2') {
                     var replyText = '@' + name + ' ' + answer;
+                } else {
+                    var replyText = 'Nothing..';
+                }
 
+                if (msg.checkbox == 'on') {
+                    retweetedS = 'retweeted';
                     //retweet line when necessary
                     T.post('statuses/retweet', { id: tweet.id_str, status: replyText }, retweeted);
                     function retweeted(err) {
                         if (err) {
                             console.log("Error: " + err.message);
                         } else {
-                            console.log('Replyed: ' + replyText);
+                            console.log('Retweeted: '
+                             + replyText);
+                            
                         }
                     }
                 } else {
-                    console.log('Not replyed');
+                    console.log('Not retweeted ' + + msg.checkbox)
                 }
 
                 // Post that tweet
-                if (msg.checkbox == 'on') {
+                if (msg.checkbox2 == 'on2') {
                     //setTimeout(reply(), 10000);
                     // function reply(){
                     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id, auto_populate_reply_metadata: true, possibly_sensitive: true }, tweeted);
-                    console.log('checkbox is YES : ' + msg.checkbox);
-                    retweetedS = 'retweeted';
+                    console.log('checkbox is YES : ' + msg.checkbox2);
+                    
 
                     // Make sure it worked!
                     function tweeted(err, reply) {
                         if (err) {
                             console.log(err.message);
                         } else {
-
-                            console.log('Retweeted: ' + scan);
+                            
+                            console.log('Replyed: ' + replyText);
                             console.log('------------------------HURRA---------------------------------');
                         }
                     }
                     //  }
                 }
                 else {
-                    console.log('Not retweeted :' + msg.checkbox);
+                    console.log('Not replyed :' + msg.checkbox2);
 
                 }
                 var retweet = "retweet";
                 tweet[retweet] = retweetedS;
                 var reply = "reply";
-                tweet[reply] = replyText;
+                if (msg.checkbox2 == 'on2'){
+                    tweet[reply] = replyText;
+                }else{
+                    tweet[reply] = 'Nothing';
+                }
 
                 io.emit('chat message', tweet);
                 console.log('emitted to client');
@@ -266,6 +277,3 @@ function search1() {
             console.log(data)
         });
 }
-
-
-
