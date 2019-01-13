@@ -1,7 +1,6 @@
 # Desescalator #
 [![Build Status](https://travis-ci.com/mesopotato/desescalator.svg?branch=master)](https://travis-ci.com/mesopotato/desescalator)
-
-[![Coverage Status](https://coveralls.io/repos/github/mesopotato/desescalator/badge.svg?branch=master)](https://coveralls.io/github/mesopotato/desescalator?branch=master)
+[![codecov](https://codecov.io/gh/mesopotato/desescalator/branch/master/graph/badge.svg)](https://codecov.io/gh/mesopotato/desescalator)
 ---
 A JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
 ---
