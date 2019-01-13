@@ -9,7 +9,6 @@ matrix:
       - name: deploy
         if: commit_message =~ /(\[makebuild\])/
       script:
-      - phpunit test/
       - ls -l
       - pwd
       deploy:
