@@ -29,10 +29,6 @@ matrix:
       - composer install
       - cd ../desescalator/
       - pwd
-
-      env:
-        global:
-          secure: "T52wMEfcgYeXNsd/MJtw4YORlDkdswYI/34M5KRAODIhyZejTTKd6gM+8tNjKhr7Xwwfy9oN3Fiaaf5kE7oH2gl1U8EQk929RtOzQ4iETpjeytUZKMg1mRauwBqO/bkP0mGvj24Aswv8SWXFe88MRXv3j5Lz6ncX37yI9CVKGB6ecOstpW7dMJEcKmMi7EhwX2uuuxxt7EepOMn0IG+3Ux+7BPNNqx3tUysdikqlmr5QMHaCc1/vwr7eRj6IPDiBujwByRyymBgToMpG0+ECMdR+Gx9shGEgPY54oCZAo8tv1j1aAXVuEIAdSjUsDcmK/O4j8bl8YHBBc4z7AGUkDxErLAJd6lY9ZeKt0YE9ynr0suh+gAXocN7VWet4zifPk/sVLLrGTa3ppWLgI8FKQNKobd5Z8oXeuXi+hvh3nfZGC+kCeDo/+3nCQA5MAd39dC2RB3G+V76jb/w0DWSebVOHE9miZKPlt/5kERrw1h4O/8V/UejFWCL36ZMnRpEojJjAQjBYuovrA/uiT3t8QL1ad2h250PMO5t4LzQVnnHGtjd3wTLfU3rDzY4ClgM3/ALCwRV80B44IMKXqxR2ZKfN5b2XdNK9Z4qXp+XNwTQbMpy5e6mQ+79ytWSW9XqQVpoLpar0iri81tbpVsFNrRxHIHXCTmeHiBG29xtzvtk="
     - language: node_js
       node_js:
       - "iojs"
