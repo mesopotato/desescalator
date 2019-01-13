@@ -34,8 +34,9 @@ matrix:
       - "iojs"
       - "7"
       - 10.14.2
+      before_script: chmod 0777 ./node_modules/.bin/mocha
       script:
-      -   mocha
+      -   npm test
       env:
       - CXX=g++-4.8
       addons:
