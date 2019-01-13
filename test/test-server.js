@@ -1,4 +1,6 @@
-var chai = require('chai');
+let chai = require('chai');
+//let server = require('../server');
+let should = chai.should();
 var assert = require('assert');
 describe('Array', function() {
   describe('#indexOf()', function() {

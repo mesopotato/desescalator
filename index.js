@@ -1,5 +1,4 @@
 const express = require('express');
-var app = require('express')();
 var app = express();
 var http = require('http').Server(app);
 module.exports = true;
@@ -9,10 +8,10 @@ var io = require('socket.io')(http);
 var Twit = require('twit');
 // Making a Twit object for connection to the API 
 var T = new Twit({
-    consumer_key: 'jafplaFI5QjMlQM5Ptekrguzx'
-    , consumer_secret: 'UZxRlsIjuXF9n7G2cnZqkW9Dlo463gy7wDvYHx6Avteu0j9lAD'
-    , access_token: '928752851265970177-cKs9f1Bqv7uXbkdI6jW8JzRbqmkAddV'
-    , access_token_secret: 'viSfro87qyblbVGlZnwmO60fwJ4EGJKd1AFpMk7Zmcby4'
+    consumer_key: 'drDx4xqnbTjWCaXzCErV6M7vk'
+    , consumer_secret: 'XqhSQcw2ni9R9nuEtAg682fTdc6aXKKCJAfk7kGJAXQOLvUXED'
+    , access_token: '928752851265970177-DaCRbTK8GgcEKsJW6AOOx8xUQ9n8iEl'
+    , access_token_secret: 'fcFapsREGGMLQQDpnqVd8ELNEQ1Rf9iwZVZJEAGcJeSXL'
 })
 
 //app.use(express.static(__dirname + '/public'));
@@ -39,7 +38,7 @@ io.on('connect', function (socket) {
 
     socket.on('close', function (msg) {
         console.log('close function reached : ' + msg);
-        
+
         scan = false;
         //kill.chat();
         // das eröffnet irgendwie ein weiterer thread..
@@ -110,9 +109,10 @@ function chat(msg, scan) {
                     var replyText = 'Nothing..';
                 }
 
-                if (msg.checkbox == 'on') {
+                if (msg.checkbox == 'on' && name != "UsrWenger") {
                     retweetedS = 'retweeted';
                     //retweet line when necessary
+
                     T.post('statuses/retweet', { id: tweet.id_str, status: replyText }, retweeted);
                     function retweeted(err) {
                         if (err) {
@@ -128,7 +128,7 @@ function chat(msg, scan) {
                 }
 
                 // Post that tweet
-                if (msg.checkbox2 == 'on2') {
+                if (msg.checkbox2 == 'on2' && name != "UsrWenger") {
                     //setTimeout(reply(), 10000);
                     // function reply(){
                     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id, auto_populate_reply_metadata: true, possibly_sensitive: true }, tweeted);
@@ -159,10 +159,11 @@ function chat(msg, scan) {
                 } else {
                     tweet[reply] = 'Nothing';
                 }
-
-                io.emit('chat message', tweet);
-                console.log('emitted to client');
-                console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+                if (name != "UsrWenger") {
+                    io.emit('chat message', tweet);
+                    console.log('emitted to client');
+                    console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
+                }
             } else {
                 console.log('Rgex OR--------SCAN WAS: ' + scan);
             }
@@ -274,3 +275,5 @@ function search1() {
             console.log(data)
         });
 }
+
+module.exports = app; // for testing
