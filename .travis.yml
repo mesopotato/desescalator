@@ -8,4 +8,5 @@ before_script:
  - chmod 0777 ./node_modules/.bin/istanbul
 script: 
  - istanbul cover --handle-sigint ./node_modules/mocha/bin/_mocha --reporter test -- -R spec
+ - istanbul cover --handle-sigint index.js
  - codecov
