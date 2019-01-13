@@ -3,7 +3,9 @@ node_js:
  - "stable"
 install:
  - npm install -g codecov
-before_script: chmod 0777 ./node_modules/.bin/mocha
+before_script: 
+ - chmod 0777 ./node_modules/.bin/mocha
+ - chmod 0777 ./node_modules/.bin/istanbul
 script: 
  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
  - codecov
