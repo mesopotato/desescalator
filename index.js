@@ -8,10 +8,10 @@ var io = require('socket.io')(http);
 var Twit = require('twit');
 // Making a Twit object for connection to the API 
 var T = new Twit({
-    consumer_key: 'YnJrJf7hiAJm9EUGyWO9A0G39'
-    , consumer_secret: 'iqyV9FBBRWgRdS8gFWw5AZmeCNByCAfAYU42u2dHwoWKXlxyzI'
-    , access_token: '928752851265970177-6oQihs8qrxGS73YHZUjDDCesx6r9kGh'
-    , access_token_secret: '76LMfedl2SlSJZnBvXnbnsrs174Et3q0FzhhIoGBboA4W'
+    consumer_key: 'jafplaFI5QjMlQM5Ptekrguzx'
+    , consumer_secret: 'UZxRlsIjuXF9n7G2cnZqkW9Dlo463gy7wDvYHx6Avteu0j9lAD'
+    , access_token: '928752851265970177-cKs9f1Bqv7uXbkdI6jW8JzRbqmkAddV'
+    , access_token_secret: 'viSfro87qyblbVGlZnwmO60fwJ4EGJKd1AFpMk7Zmcby4'
 })
 
 //app.use(express.static(__dirname + '/public'));

@@ -15,5 +15,9 @@
     "stream": "0.0.2",
     "streammagic": "^1.0.0",
     "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
