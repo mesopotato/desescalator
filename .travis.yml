@@ -8,8 +8,6 @@ matrix:
       stages:
       - name: deploy
         if: commit_message =~ /(\[makebuild\])/
-      install:
-      - composer install --prefer-source --no-interaction --dev
       script:
       - phpunit test/
       - ls -l
