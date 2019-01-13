@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "nyc mocha",
-    "test-cov": "istanbul cover _mocha"
+    "test-cov": "istanbul cover _mocha",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "author": "",
   "license": "ISC",
