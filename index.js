@@ -2,6 +2,7 @@ const express = require('express');
 var app = require('express')();
 var app = express();
 var http = require('http').Server(app);
+module.exports = true;
 
 var io = require('socket.io')(http);
 
