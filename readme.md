@@ -3,7 +3,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/mesopotato/desescalator/badge.svg?branch=master)](https://coveralls.io/github/mesopotato/desescalator?branch=master)
 ---
-A PHP?? and JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
+A JavaScript implementation by using Twitter API, nodeJS, socket.io and more :)
 ---
 To start: download [nodeJS](https://nodejs.org/en/)
 
