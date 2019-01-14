@@ -7,6 +7,7 @@ var io = require('socket.io')(http);
 
 var Twit = require('twit');
 // Making a Twit object for connection to the API 
+// this should be in a config file...
 var T = new Twit({
     consumer_key: 'drDx4xqnbTjWCaXzCErV6M7vk'
     , consumer_secret: 'XqhSQcw2ni9R9nuEtAg682fTdc6aXKKCJAfk7kGJAXQOLvUXED'
