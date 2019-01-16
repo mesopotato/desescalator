@@ -9,3 +9,4 @@ before_script:
 script: 
  - istanbul cover --no-default-excludes -x "**/node_modules/**" ./node_modules/mocha/bin/_mocha --reporter test --R
  - codecov
+ - npm run lint -s
