@@ -30,35 +30,34 @@ http.listen(3000, function () {
     console.log('listening on *:3000');
 });
 
-    io.on('connect', function (socket) {
+io.on('connect', function (socket) {
 
-        console.log('a user connected');
-        socket.on('disconnect', function () {
-            console.log('user disconnected');
-        });
-
-        socket.on('close', function (msg) {
-            console.log('close function reached : ' + msg);
-
-            scan = false;
-            //kill.chat();
-            // das eröffnet irgendwie ein weiterer thread..
-            chat(msg, scan);
-            console.log('terminated: ');
-        });
-
-        socket.on('chat message', function (msg) {
-            scan = true;
-            console.log('chat message reached');
-            chat(msg, scan);
-        });
-        socket.on('wtf', function (msg) {
-            console.log('WTF message reached');
-        });
-
+    console.log('a user connected');
+    socket.on('disconnect', function () {
+        console.log('user disconnected');
     });
 
-function chat(msg, scan) {
+    socket.on('close', function (msg) {
+        console.log('close function reached : ' + msg);
+
+        var scan = false;
+        //kill.chat();
+        // das eröffnet irgendwie ein weiterer thread..
+        chat(msg, scan);
+        console.log('terminated: ');
+    });
+
+    socket.on('chat message', function (msg) {
+        var scan = true;
+        console.log('chat message reached');
+        chat(msg, scan);
+    });
+    socket.on('wtf', function (msg) {
+        console.log('WTF message reached');
+    });
+});
+
+function chat (msg, scan) {
     console.log('Message kommt rein: ' + msg.string);
     console.log('Actual value of the scan BOOLEAN: ' + scan);
     //-----------------------------------------
@@ -185,7 +184,7 @@ function chat(msg, scan) {
 //console.log('scan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was falsescan was false');
 //}
 //-----------------------------------------
-function isEmpty(obj) {
+function isEmpty (obj) {
     for (var key in obj) {
         if (obj.hasOwnProperty(key))
             return false;

@@ -4,6 +4,11 @@
     "rules": {
         "indent": ["warn", 4],
         "no-extra-semi": "off",
-        "semi": "warn"
+        "semi": "warn",
+        "no-trailing-spaces": "off",
+        "comma-style": "warn",
+        "spaced-comment": "off",
+        "no-path-concat": "warn",
+        "no-multiple-empty-lines":"off"
     }
 }
