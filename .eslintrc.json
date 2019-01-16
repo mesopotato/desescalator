@@ -1,4 +1,9 @@
 {
     "extends": "standard",
-    "root": true
+    "root": true,
+    "rules": {
+        "indent": ["warn", 4],
+        "no-extra-semi": "off",
+        "semi": "warn"
+    }
 }
