@@ -9,9 +9,9 @@ var Twit = require('twit');
 // Making a Twit object for connection to the API 
 // this should be in a config file...
 var T = new Twit({
-    consumer_key: 'drDx4xqnbTjWCaXzCErV6M7vk'
-    , consumer_secret: 'XqhSQcw2ni9R9nuEtAg682fTdc6aXKKCJAfk7kGJAXQOLvUXED'
-    , access_token: '928752851265970177-DaCRbTK8GgcEKsJW6AOOx8xUQ9n8iEl'
+    consumer_key: '9ReuXYRYMnbvBptUs0KpXLuNZ'
+    , consumer_secret: 'jtm1Po9oWj02GTlE6QmEUAq0kZgKsHb0uhuuzjgdweoAvjfMj6'
+    , access_token: '928752851265970177-MXBaqHohhFShNkr91QWt8X02hTpOeBb'
     , access_token_secret: 'fcFapsREGGMLQQDpnqVd8ELNEQ1Rf9iwZVZJEAGcJeSXL'
 })
 
@@ -30,33 +30,34 @@ http.listen(3000, function () {
     console.log('listening on *:3000');
 });
 
-io.on('connect', function (socket) {
+    io.on('connect', function (socket) {
 
-    console.log('a user connected');
-    socket.on('disconnect', function () {
-        console.log('user disconnected');
+        console.log('a user connected');
+        socket.on('disconnect', function () {
+            console.log('user disconnected');
+        });
+
+        socket.on('close', function (msg) {
+            console.log('close function reached : ' + msg);
+
+            scan = false;
+            //kill.chat();
+            // das eröffnet irgendwie ein weiterer thread..
+            chat(msg, scan);
+            console.log('terminated: ');
+        });
+
+        socket.on('chat message', function (msg) {
+            scan = true;
+            console.log('chat message reached');
+            chat(msg, scan);
+        });
+        socket.on('wtf', function (msg) {
+            console.log('WTF message reached');
+        });
+
     });
 
-    socket.on('close', function (msg) {
-        console.log('close function reached : ' + msg);
-
-        scan = false;
-        //kill.chat();
-        // das eröffnet irgendwie ein weiterer thread..
-        chat(msg, scan);
-        console.log('terminated: ');
-    });
-
-    socket.on('chat message', function (msg) {
-        scan = true;
-        console.log('chat message reached');
-        chat(msg, scan);
-    });
-    socket.on('wtf', function (msg) {
-        console.log('WTF message reached');
-    });
-
-});
 function chat(msg, scan) {
     console.log('Message kommt rein: ' + msg.string);
     console.log('Actual value of the scan BOOLEAN: ' + scan);
