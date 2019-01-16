@@ -2,3 +2,4 @@
 vendor
 .vscode
 secret.php
+node_modules
