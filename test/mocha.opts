@@ -1,0 +1,5 @@
+--require test/support/env
+--timeout 30000
+--reporter spec
+--bail
+--check-leaks

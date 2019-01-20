@@ -25,26 +25,40 @@ app.get('/', function (req, res) {
     console.log('war in app.get');
 });
 
-
-http.listen(3000, function () {
+exports.app  = http.listen(3000, function () {
     console.log('listening on *:3000');
 });
 
 io.on('connect', function (socket) {
 
     console.log('a user connected');
+    //assemling some testdata for the unitsets
+    var data = {
+        contactId: 1,
+        firstName: 'Jhon',
+        latName: 'Doe',
+        email: 'jhonDoe@email.com',
+        phone: '1234'
+    };
+    io.emit('connected', data);
+
     socket.on('disconnect', function () {
         console.log('user disconnected');
+        io.emit('disconnected');
     });
 
     socket.on('close', function (msg) {
         console.log('close function reached : ' + msg);
 
         var scan = false;
+        var scan2 = {
+            bool: 'false'
+        };
         //kill.chat();
         // das eröffnet irgendwie ein weiterer thread..
         chat(msg, scan);
         console.log('terminated: ');
+        io.emit('close', scan2);
     });
 
     socket.on('chat message', function (msg) {
@@ -56,6 +70,7 @@ io.on('connect', function (socket) {
         console.log('WTF message reached');
     });
 });
+
 
 function chat (msg, scan) {
     console.log('Message kommt rein: ' + msg.string);
