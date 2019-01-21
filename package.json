@@ -8,7 +8,7 @@
     "test": "nyc mocha --exit",
     "test-cov": "nyc istanbul cover _mocha",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "lint": "eslint --ignore-path .eslintignore ./**"
+    "lint": "eslint ./** --ignore-path .eslintignore"
   },
   "author": "",
   "license": "ISC",
