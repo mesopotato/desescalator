@@ -9,6 +9,6 @@ before_script:
  - chmod 0777 ./node_modules/.bin/mocha
  - chmod 0777 ./node_modules/.bin/istanbul
 script: 
+ - npm run lint -s -ddd
  - istanbul cover --no-default-excludes -x "**/node_modules/**" ./node_modules/mocha/bin/_mocha --reporter test --R
  - codecov
- - npm run lint -s -ddd
