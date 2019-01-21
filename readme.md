@@ -47,6 +47,8 @@ on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streami
 
 [Code Coverage](https://codecov.io/gh/mesopotato/desescalator)
 
+[Eslint Report](https://github.com/mesopotato/desescalator/blob/master/eslint-report.html)
+
 [Sprint Planning](https://drive.google.com/open?id=1I7S88FCw0pv7PVFz4RMY2pTlQ7vsZWbX)
 
 [Meetings Protokolle](https://docs.google.com/document/d/14qLnfL7dBMn7mCEZjK3b1hxpyWvRV3EUCzV04RINJ6s/edit?usp=sharing)
