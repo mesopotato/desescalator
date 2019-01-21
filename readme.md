@@ -41,3 +41,5 @@ on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streami
 
 [UseCase Diagramm](https://drive.google.com/file/d/12pSeUfSbhQNWHmQcqW2j2ku75_hxw0Ws/view?usp=sharing)
 
+[Twitter App Account](https://twitter.com/UsrWenger)
+
