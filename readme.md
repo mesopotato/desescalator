@@ -43,3 +43,13 @@ on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streami
 
 [Twitter App Account](https://twitter.com/UsrWenger)
 
+[Travis CI](https://travis-ci.com/mesopotato/desescalator)
+
+[Code Coverage](https://codecov.io/gh/mesopotato/desescalator)
+
+[Sprint Planning]
+
+[Meetings Protokolle](https://docs.google.com/document/d/14qLnfL7dBMn7mCEZjK3b1hxpyWvRV3EUCzV04RINJ6s/edit?usp=sharing)
+
+
+
