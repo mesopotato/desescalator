@@ -2,17 +2,6 @@ let chai = require('chai');
 //let server = require('../server');
 let should = chai.should();
 var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('Dummy Test: should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
-    });
-  });
-  
-});
-
-'use strict'
-
 var expect = require('chai').expect
   , app = require('../index')
   , io = require('socket.io-client')
@@ -29,6 +18,15 @@ var expect = require('chai').expect
   }
   , sender
   , receiver
+
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('Dummy Test: should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+  
+});
 
 describe('Socket Connection Test', function(){
   beforeEach(function(done){
