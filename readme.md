@@ -30,7 +30,7 @@ also nothing can be found on the [API reference page](https://developer.twitter.
 
 on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streaming/6035) page is a sad chat where everybody has the same problem and the closing-thread-argument is difficult to understand
 
-~~furthermore too many replyes had ben made by the app during testing-phase so that **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site~~ i mad a new app "desescalator2"
+~~furthermore too many replyes had ben made by the app during testing-phase so that **twitter restricted the desescalator** currently to ReadOnly access until further notice or actions form our site~~ i made a new app "desescalator2"
 
 ---
 [Documents](https://drive.google.com/open?id=1Jv7LSfT_MDGi3HYUMKRcH5u5S9tPgUTS)
@@ -50,3 +50,11 @@ on the [twittercommunity.com](https://twittercommunity.com/t/how-to-stop-streami
 [Sprint Planning](https://drive.google.com/open?id=1I7S88FCw0pv7PVFz4RMY2pTlQ7vsZWbX)
 
 [Meetings Protokolle](https://docs.google.com/document/d/14qLnfL7dBMn7mCEZjK3b1hxpyWvRV3EUCzV04RINJ6s/edit?usp=sharing)
+
+
+---
+Formated eslint output:
+
+```shell  
+ $ .\node_modules\.bin\eslint .\** -o ./eslint-report.html -f html  
+```

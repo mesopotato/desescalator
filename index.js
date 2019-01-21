@@ -134,13 +134,12 @@ function chat (msg, scan) {
                         if (err) {
                             console.log("Error: " + err.message);
                         } else {
-                            console.log('Retweeted: '
-                                + replyText);
+                            console.log('Retweeted: ' + replyText);
 
                         }
                     }
                 } else {
-                    console.log('Not retweeted ' + + msg.checkbox)
+                    console.log('Not retweeted ' + msg.checkbox)
                 }
 
                 // Post that tweet

@@ -1,6 +1,10 @@
 {
     "extends": "standard",
     "root": true,
+    "env": {
+        "browser": true,
+        "node": true
+    },
     "rules": {
         "indent": ["warn", 4],
         "no-extra-semi": "off",
@@ -9,6 +13,23 @@
         "comma-style": "warn",
         "spaced-comment": "off",
         "no-path-concat": "warn",
-        "no-multiple-empty-lines":"off"
+        "no-multiple-empty-lines":"off",
+        "no-inner-declarations":"warn",
+        "quotes":"warn",
+        "padded-blocks":"warn",
+        "brace-style":"warn",
+        "space-before-function-paren":"warn",
+        "no-redeclare":"warn",
+        "eqeqeq":"warn",
+        "no-multi-spaces":"warn",
+        "operator-linebreak":"warn",
+        "space-infix-ops":"warn",
+        "eol-last":"warn",
+        "no-unused-vars":"warn",
+        "one-var":"warn",
+        "no-undef":"warn",
+        "node/no-deprecated-api":"warn",
+        "comma-spacing":"warn",
+        "space-before-blocks":"warn"
     }
 }
