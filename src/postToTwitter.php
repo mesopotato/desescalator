@@ -1,11 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: fabia_ovv7omp
+ * User: Fabian Bienz
  * Date: 12/5/2018
  * Time: 2:25 PM
+ * @deprecated
  */
- $post = $_POST['comment'];
+ 
+$post = $_POST['comment'];
 
 require_once ("config.php");
 require_once ("codebird/codebird.php");

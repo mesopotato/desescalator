@@ -4,7 +4,9 @@
  * User: fabian bienz
  * Date: 11/28/2018
  * Time: 2:32 PM
+ * @deprecated
  */
+
 require ("../src/config.php");
 
 function testconfig(){

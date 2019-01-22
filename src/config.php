@@ -1,4 +1,7 @@
 <?php
+/**
+ * @Deprecated
+ */
 
 require("../../desescalator_config/secret.php");
 

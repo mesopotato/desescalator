@@ -1,13 +1,18 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: fabia_ovv7omp
+ * User: Fabian Bienz
  * Date: 12/16/2018
  * Time: 9:44 PM
  */
 
 require_once ("codebird/codebird.php");
 
+/**
+ * Class TwitterPost
+ * Provides Methods for dispatching posts to Twitter
+ * no Usage since switch to Node.js
+ */
 class TwitterPost
 {
 	private $config;

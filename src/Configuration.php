@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: fabia_ovv7omp
+ * User: Fabian Bienz
  * Date: 12/16/2018
  * Time: 11:48 AM
  */
@@ -17,6 +17,13 @@ $localACCESS_TOKEN_SECRET = $secret["accesstokensecret"];
 namespace Mesopotato\Desescalator;
 require_once __DIR__.'/../vendor/autoload.php';
 use Desescalator\Secret\Secret;
+
+/**
+ * Class Configuration
+ * @package Mesopotato\Desescalator
+ * Provides necessary Tokens for the Twitter API
+ * no usage since switch to Node.js
+ */
 class Configuration
 {
 	/** @var string api-key */
