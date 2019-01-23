@@ -6,7 +6,7 @@
         "node": true
     },
     "rules": {
-        "indent": ["warn", 4],
+        "indent": ["off", 4],
         "no-extra-semi": "off",
         "semi": "off",
         "no-trailing-spaces": "off",
