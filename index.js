@@ -9,10 +9,10 @@ var Twit = require('twit');
 // Making a Twit object for connection to the API 
 // this should be in a config file...
 var T = new Twit({
-    consumer_key: '9ReuXYRYMnbvBptUs0KpXLuNZ'
-    , consumer_secret: 'jtm1Po9oWj02GTlE6QmEUAq0kZgKsHb0uhuuzjgdweoAvjfMj6'
-    , access_token: '928752851265970177-MXBaqHohhFShNkr91QWt8X02hTpOeBb'
-    , access_token_secret: 'fcFapsREGGMLQQDpnqVd8ELNEQ1Rf9iwZVZJEAGcJeSXL'
+    consumer_key: '5pHnFmKubdU3Gi3C9TiCy7gn5'
+    , consumer_secret: 'p6pSzvnIW7IS0rxIvMZfMwjcXool1eYbbKubt3Tc5sntDA3046'
+    , access_token: '928752851265970177-m9BXH4P9HLTYOovZWymTNVw5QfV29oL'
+    , access_token_secret: 'MqssdYzBmbeaRzbnUwpj8w8rcGA3cfe3geWNM5vS5GpqI'
 })
 
 //app.use(express.static(__dirname + '/public'));
